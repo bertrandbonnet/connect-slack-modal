@@ -1,0 +1,203 @@
+.modal {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  overflow: hidden;
+  background: var(--bg-1);
+  border: 0.5px solid var(--border-1);
+  border-radius: 6px;
+  box-shadow: var(--shadow-xs);
+}
+
+.pattern {
+  position: absolute;
+  top: -0.2786px;
+  left: -221px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 397px;
+  height: 351.976px;
+  transform-origin: 0 0;
+  transform: rotate(-45deg);
+  pointer-events: none;
+}
+
+.patternLine {
+  flex: none;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, #eeeceb, rgba(238, 236, 235, 0));
+}
+
+.logos {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.plate {
+  display: flex;
+  flex: none;
+  padding: 4px;
+  border: 1px solid var(--border-2);
+  border-radius: 20px;
+}
+
+.plateHyperline {
+  background: #fcfcfc;
+}
+
+.plateSlack {
+  background: #fdfdfc;
+}
+
+.mark {
+  width: 56px;
+  height: 56px;
+  flex: none;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.hyperline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  box-shadow:
+    0 64px 128px -32px rgba(28, 25, 23, 0.06),
+    0 32px 64px -16px rgba(28, 25, 23, 0.04),
+    0 16px 32px -8px rgba(28, 25, 23, 0.03),
+    0 8px 16px -4px rgba(28, 25, 23, 0.03),
+    0 4px 8px 0 rgba(28, 25, 23, 0.04);
+}
+
+.slack {
+  box-shadow:
+    0 8px 16px -8px rgba(28, 25, 23, 0.03),
+    0 4px 8px -4px rgba(28, 25, 23, 0.03);
+}
+
+.hyperline img,
+.slack img,
+.close img {
+  display: block;
+}
+
+.connector {
+  display: block;
+  flex: none;
+  width: 80px;
+  height: 1px;
+  overflow: visible;
+}
+
+.connectorLine {
+  stroke-dasharray: 4 4;
+  stroke-dashoffset: 2;
+  animation: connectorFlow 4.4s linear infinite;
+}
+
+@keyframes connectorFlow {
+  from {
+    stroke-dashoffset: 82;
+  }
+
+  to {
+    stroke-dashoffset: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .connectorLine {
+    animation: none;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.close:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.body {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.015em;
+  color: var(--fg-secondary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.button {
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.015em;
+  cursor: pointer;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.primary {
+  border: 0;
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.primary:hover {
+  background: var(--blue-hover);
+}
